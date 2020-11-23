@@ -1,10 +1,16 @@
-import './App.css';
+import React from 'react'
+import Layout from './layout/layout';
 
-function App() {
+const App = () =>
+{
+
+
+
   return (
-    <div className="App">
-      
-      Galleria
+    <div>
+        <Layout>
+          <p>Starting Page Layout</p>
+        </Layout>
     </div>
   );
 }

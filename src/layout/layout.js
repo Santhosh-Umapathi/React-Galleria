@@ -1,11 +1,9 @@
 import React from 'react'
 
-import Aux from '../hoc/Aux'
-
 const Layout = (props) =>
 {
 	return (
-		<Aux>
+		<>
 			<div>
 				ToolBar, SideDrawer
 			</div>
@@ -13,7 +11,7 @@ const Layout = (props) =>
 			<main>
 				{props.children}
 			</main>
-		</Aux>
+		</>
 	)
 }
 

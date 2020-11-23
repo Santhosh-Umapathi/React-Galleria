@@ -18,7 +18,7 @@ $ yarn start
 ## Packages
 * [Redux](https://redux.js.org/) - Redux for React
 * [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Asynchronous operations for React
-* [React Router](https://reactrouter.com/web/guides/quick-start) - Routing / Navigation for React
+* [React Router Dom](https://reactrouter.com/web/guides/quick-start) - Routing / Navigation for React
 * [Prop Types](https://www.npmjs.com/package/prop-types) - Property Types for React
 * [Axios](https://github.com/axios/axios) - Network requests for React
 

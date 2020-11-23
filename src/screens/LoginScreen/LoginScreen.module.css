@@ -1,0 +1,60 @@
+.RootDiv
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+}
+
+.InputContainer
+{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.InputContainer input
+{
+	margin: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	border: 0.5px solid #8ee4da;
+	font-size: 20px;
+	outline: none;
+
+}
+
+.InputContainer input:focus, input:active
+{
+
+	box-shadow: 1px 1px #8ee4da;
+	margin: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	border: 0.5px solid #8ee4da;
+	font-size: 20px;
+
+}
+
+.InputContainer button
+{
+	border-radius: 10px;
+	border: 0.5px solid #8ee4da;
+	margin: 10px;
+	padding: 15px;
+	background-color: #8ee4da;
+	opacity: 0.9;
+	font-size: 15px;
+	outline: none;
+	
+}
+
+.InputContainer button:hover
+{
+	cursor: pointer;
+	opacity: 1;
+	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19); */
+	
+}

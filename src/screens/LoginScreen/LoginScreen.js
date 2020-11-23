@@ -1,5 +1,12 @@
-import React, {useState, useEffect} from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+
+//CSS
+import classes from './LoginScreen.module.css'
+
+
+import logo from '../../assets/images/logo-animated.gif';
+
+
 
 const LoginScreen = (props) =>
 {
@@ -7,25 +14,33 @@ const LoginScreen = (props) =>
 
 
 	return (
-		<div style={styles.containerView}>
-			<p style={styles.text}>LoginScreen</p>
+		<div className = {classes.RootDiv}>
+			
+			<img
+				src={logo}
+			/>
+			<div className={classes.InputContainer}>
+			<p>Hello there !</p>
+			<input
+				placeholder = "Email"
+				
+			/>
+			<input
+				placeholder = "Password"
+
+				/>
+
+			<button>Let's Go..</button>
+
+			</div>
+
+			
+
 		</div>
 		);
 };
 
 
-const styles = StyleSheet.create({
-	containerView:
-	{
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	text: 
-	{
-		fontSize: 30,
-	},
-});
+
 
 export default LoginScreen;

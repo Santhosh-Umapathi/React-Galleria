@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
+//CSS
+import './index.css'
+
 //React Router
 import { BrowserRouter } from 'react-router-dom'
 //Redux

@@ -1,12 +1,47 @@
+/*Login Page*/
 .RootDiv
 {
 	display: flex;
-	justify-content: center;
+	flex-flow: column;
 	align-items: center;
-	width: 100%;
+	justify-content: center;
+	position:absolute;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	left:0px;
+}
+
+/*Image*/
+.Image
+{
+	width: auto;
 	height: auto;
 }
 
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.Image
+	{
+		width: 600px;
+		height: 600px;
+	}
+}
+
+/*Mobiles*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.Image
+	{
+		width: 310px;
+		height: 310px;
+	}	
+}
+
+
+
+/*Input Container*/
 .InputContainer
 {
 	display: flex;
@@ -15,6 +50,7 @@
 	align-items: center;
 }
 
+/*Input Fields*/
 .InputContainer input
 {
 	margin: 10px;
@@ -23,21 +59,21 @@
 	border: 0.5px solid #8ee4da;
 	font-size: 20px;
 	outline: none;
-
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
 }
 
-.InputContainer input:focus, input:active
+.InputContainer input:hover 
 {
-
-	box-shadow: 1px 1px #8ee4da;
-	margin: 10px;
-	padding: 15px;
-	border-radius: 10px;
-	border: 0.5px solid #8ee4da;
-	font-size: 20px;
-
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+.InputContainer input:focus 
+{
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/*Login button*/
 .InputContainer button
 {
 	border-radius: 10px;
@@ -48,13 +84,14 @@
 	opacity: 0.9;
 	font-size: 15px;
 	outline: none;
-	
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
 }
+
 
 .InputContainer button:hover
 {
 	cursor: pointer;
-	opacity: 1;
-	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19); */
-	
+	opacity: 1;	
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }

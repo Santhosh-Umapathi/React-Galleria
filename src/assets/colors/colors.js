@@ -1,4 +1,4 @@
-export default
+const colors =
 {
 	primary:
 	{
@@ -19,3 +19,5 @@ export default
 		green: "#82be20",
 	},
 };
+
+export default colors;

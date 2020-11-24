@@ -1,0 +1,98 @@
+/*Search Bar*/
+.SearchBar
+{
+	display: flex;
+	align-items: center;
+	width: 40%;
+}
+
+.SearchBar input
+{
+	width: 100%;
+	padding: 15px;
+	padding-left: 60px;
+	border-radius: 10px;
+	border: 0.5px solid #8ee4da;
+	font-size: 20px;
+	outline: none;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.SearchBar input:hover 
+{
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.SearchBar input:focus 
+{
+	box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/*Search button*/
+.Icon
+{
+	cursor: pointer;
+	color:#4d4d4d;
+	font-size: 30px;
+	margin-right: -50px;
+	z-index: 1;
+}
+
+.Icon:hover
+{
+	color:#8ee4da;
+}
+
+.Icon:active
+{
+	animation: clicked 0.2s linear;
+}
+
+
+/*Trending Component*/
+.Trending
+{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 40%;
+	color:#666666;
+	font-size: 16px;
+	font-style: normal;
+}
+
+.TrendingKeywords
+{
+	margin: 10px;
+	color: #999999;
+	font-style: italic;
+}
+
+.TrendingKeywords:hover
+{
+	cursor: pointer;
+	color: #8ee4da;
+}
+
+.TrendingKeywords:active
+{
+	animation: clicked 0.2s linear;
+}
+
+
+
+
+
+
+@keyframes clicked {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

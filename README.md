@@ -21,6 +21,7 @@ $ yarn start
 * [React Router Dom](https://reactrouter.com/web/guides/quick-start) - Routing / Navigation for React
 * [Prop Types](https://www.npmjs.com/package/prop-types) - Property Types for React
 * [Axios](https://github.com/axios/axios) - Network requests for React
+* [React Icons](https://react-icons.github.io/react-icons/) - Icons for React
 
 ## Project Structure
 📦src

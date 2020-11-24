@@ -9,6 +9,7 @@ import logo from '../../assets/images/logo-animated.gif';
 //Components
 import Searchbar from '../../components/Searchbar';
 import Trending from '../../components/Trending';
+import ImageTile from '../../components/ImageTile';
 
 
 const HomeScreen = (props) =>
@@ -23,6 +24,8 @@ const HomeScreen = (props) =>
 			<Searchbar />
 
 			<Trending />
+
+			<ImageTile />
 
 		</div>
 		);

@@ -4,7 +4,7 @@ const LogoutScreen = () =>
 {
 	return (
 		<div>
-			
+			LogoutScreen
 		</div>
 	)
 }

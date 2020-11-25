@@ -1,5 +1,7 @@
 import React from 'react'
+//Nav Bar Component
 import NavigationItem from './NavigationItem/NavigationItem'
+//Css
 import classes from './NavigationItems.module.css'
 
 

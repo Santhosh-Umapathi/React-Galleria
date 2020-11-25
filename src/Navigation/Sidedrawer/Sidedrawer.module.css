@@ -1,0 +1,72 @@
+/*Desktop*/
+@media (min-width: 1025px) 
+{
+	.Sidedrawer
+	{
+		display: none;
+	}
+}
+
+.Open 
+{
+	transform: translateX(-20px);
+}
+
+.Close
+{
+	transform: translateX(-100%);
+}
+
+.LogoContainer
+{
+	display: flex;
+	justify-content: center;
+}
+
+.Logo
+{
+	width: 150px;
+	height: 150px;
+}
+
+
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.Sidedrawer
+	{
+		position: fixed;
+		width: 280px;
+		max-width: 70%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 200;
+		background-color: white;
+		padding: 32px 32px;
+		box-sizing: border-box;
+		border-radius: 20px;
+		transition: transform 0.3s ease-out;
+	}
+}
+
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.Sidedrawer
+	{
+		position: fixed;
+		width: 280px;
+		max-width: 70%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 200;
+		background-color: white;
+		padding: 32px 32px;
+		box-sizing: border-box;
+		border-radius: 20px;
+		transition: transform 0.3s ease-out;
+	}
+}

@@ -1,0 +1,70 @@
+/*Desktop*/
+.Toolbar
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 90;
+	top: 0;
+	left: 0;
+	padding: 0 20px;
+	box-sizing: border-box;
+	background-color: rgba(142, 228, 218, 0.1);
+}
+
+.Toolbar p
+{
+	color: #4d4d4d;
+	font-size: 20px;
+}
+
+.Toolbar nav
+{
+	height: 100%;
+}
+
+.LogoContainer
+{
+	display: flex;
+}
+
+.Logo
+{
+	width: 55px;
+	height: 55px;
+}
+
+
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.DesktopOnly
+	{
+		display: none; /*Hide Tool bar on mobile*/
+	}
+
+	.LogoContainer
+	{
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.DesktopOnly
+	{
+		display: none; /*Hide Tool bar on mobile*/
+	}
+
+	.LogoContainer
+	{
+		width: 100%;
+		justify-content: center;
+	}
+}

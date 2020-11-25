@@ -1,8 +1,8 @@
-/*Mobile*/
+/*Desktop*/
 .NavigationItems
 {
 	display: flex;
-	flex-flow: column;
+	flex-flow: row;
 	height: 100%;
 	align-items: center;
 	margin: 0;
@@ -10,11 +10,24 @@
 	list-style: none;
 }
 
-/*Desktop*/
-@media (min-width: 500px)
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
 {
 	.NavigationItems
 	{
-		flex-flow: row;
+		flex-flow: column;
 	}
 }
+
+/*Mobile*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.NavigationItems
+	{
+		flex-flow: column;
+	}
+}
+
+
+
+

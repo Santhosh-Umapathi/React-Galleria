@@ -1,4 +1,6 @@
 import React from 'react'
+
+//Layout
 import Layout from './Layout/Layout';
 
 //Screens
@@ -16,7 +18,9 @@ const App = () =>
   return (
     // <HomeScreen />
     <Layout>
-      </Layout>
+
+    </Layout>
+    
     
   );
 }

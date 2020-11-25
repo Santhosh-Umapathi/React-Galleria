@@ -1,0 +1,52 @@
+/*Desktop*/
+.DrawerToggle 
+{
+    display: none;
+}
+
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.DrawerToggle {
+        width: 40px;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    .DrawerToggle div {
+        width: 70%;
+        height: 2px;
+        background-color: #666666;
+        border-radius: 10px;
+    }
+}
+
+/*Mobiles*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.DrawerToggle {
+        width: 40px;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    .DrawerToggle div {
+        width: 70%;
+        height: 2px;
+        background-color: #666666;
+        border-radius: 10px;
+    }	
+}

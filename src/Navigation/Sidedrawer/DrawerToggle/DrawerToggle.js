@@ -1,5 +1,6 @@
 import React from 'react'
-import classes from './DrawerToggle.css'
+//CSS
+import classes from './DrawerToggle.module.css'
 
 const DrawerToggle = (props) =>
 {
@@ -11,7 +12,6 @@ const DrawerToggle = (props) =>
 			<div></div>
 			<div></div>
 			<div></div>
-
 		</div>
 	)
 }

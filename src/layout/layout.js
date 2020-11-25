@@ -27,15 +27,13 @@ const Layout = (props) =>
 
 	return (
 		<>
+			<Toolbar clicked={toggleSidebarHandler} />
 			
-			
-
-				<Toolbar clicked={toggleSidebarHandler}/>
-				{/* <Sidedrawer show={showSideDrawer} backdropHandler={backdropHandler}/> */}
+			<Sidedrawer show={showSideDrawer} backdropHandler={backdropHandler}/>
 	
-				{/* <main className = {classes.content}>
-					{props.children}
-				</main> */}
+			<main className = {classes.content}>
+				{props.children}
+			</main>
 		</>
 	)
 }

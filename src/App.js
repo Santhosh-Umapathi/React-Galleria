@@ -1,9 +1,11 @@
 import React from 'react'
-import Layout from './layout/layout';
+import Layout from './Layout/Layout';
 
 //Screens
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
+import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
+import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
 
 
 const App = () =>
@@ -12,13 +14,10 @@ const App = () =>
 
 
   return (
-    <div>
-      {/* <LoginScreen /> */}
-      <HomeScreen />
-        {/* <Layout>
-          <p>Starting Page Layout</p>
-        </Layout> */}
-    </div>
+    // <HomeScreen />
+    <Layout>
+      </Layout>
+    
   );
 }
 

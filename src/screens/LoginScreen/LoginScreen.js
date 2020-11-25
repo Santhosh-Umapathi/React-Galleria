@@ -15,7 +15,7 @@ const LoginScreen = (props) =>
 
 	return (
 		<div className = {classes.RootDiv}>
-			<img src={logo} className = {classes.Image}/>
+			<img src={logo} className = {classes.Image} alt = "login"/>
 			
 			<div className={classes.InputContainer}>
 				<input placeholder="Email" />

@@ -1,7 +1,7 @@
 import actionTypes from './actionTypes'
 import axios from '../../axios/axios'
 
-export const loginDispatcher = () =>
+const loginDispatcher = (value) =>
 {
 	return {
 		type: actionTypes.LOGIN,
@@ -10,14 +10,40 @@ export const loginDispatcher = () =>
 }
 
 
+const setDataToStore = (value) =>
+{
+	return {
+		type: actionTypes.GET_DATA,
+		payload:value
+	}
+}
+
+const error = (value) =>
+{
+	return {
+		type: actionTypes.ERROR,
+		payload:value
+	}
+}
+	
+
+
 
 //Middleware
-export const login = () =>
+const getData = (keyword, limit) =>
 {
+
+	const searchParam = `${keyword}/top.json?limit=${limit}`
+
 	return dispatch =>
 	{
-		// axios.get('https://react-burger-builder-49c67.firebaseio.com/ingredients.json')
-		// 	.then(res => dispatch(setIngredients(res.data)))
-		// 	.catch(err => dispatch(fetchIngredientsFailed()))
+		axios.get(searchParam)
+			.then(res => dispatch(setDataToStore(res.data.data.children)))
+			.catch(err => dispatch(error(err)))
 	}
+}
+
+export {
+	getData,
+
 }

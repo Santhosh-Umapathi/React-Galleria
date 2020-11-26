@@ -2,7 +2,9 @@ import actionTypes from '../actions/actionTypes'
 
 const initialState =
 {
-	login: null
+	login: null,
+	data: null,
+	error:null
 }
 
 
@@ -15,6 +17,20 @@ const reducer = (state = initialState, action) =>
 			
 			return {
 				...state,
+			}
+		
+		case actionTypes.GET_DATA:
+		
+			return {
+				...state,
+				data:action.payload
+			}
+		
+		case actionTypes.ERROR:
+	
+			return {
+				...state,
+				error:action.payload
 			}
 	
 		

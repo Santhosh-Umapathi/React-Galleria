@@ -1,13 +1,7 @@
+//Actions Constant
 import actionTypes from './actionTypes'
+//Axios
 import axios from '../../axios/axios'
-
-const loginDispatcher = (value) =>
-{
-	return {
-		type: actionTypes.LOGIN,
-		payload: value
-	}
-}
 
 
 const setDataToStore = (value) =>
@@ -15,6 +9,13 @@ const setDataToStore = (value) =>
 	return {
 		type: actionTypes.GET_DATA,
 		payload:value
+	}
+}
+
+const setLoading = () =>
+{
+	return {
+		type: actionTypes.SET_LOADING,
 	}
 }
 
@@ -37,6 +38,8 @@ const getData = (keyword, limit) =>
 
 	return dispatch =>
 	{
+		dispatch(setLoading())
+
 		axios.get(searchParam)
 			.then(res => dispatch(setDataToStore(res.data.data.children)))
 			.catch(err => dispatch(error(err)))
@@ -45,5 +48,6 @@ const getData = (keyword, limit) =>
 
 export {
 	getData,
+	setLoading,
 
 }

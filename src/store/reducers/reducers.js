@@ -2,8 +2,8 @@ import actionTypes from '../actions/actionTypes'
 
 const initialState =
 {
-	login: null,
 	data: null,
+	isLoading:false,
 	error:null
 }
 
@@ -12,25 +12,26 @@ const initialState =
 
 const reducer = (state = initialState, action) =>
 {
-	switch (action.type) {
-		case actionTypes.LOGIN:
-			
-			return {
-				...state,
-			}
-		
+	switch (action.type)
+	{
+
 		case actionTypes.GET_DATA:
 		
 			return {
 				...state,
-				data:action.payload
+				data: action.payload,
+				isLoading: false,
+				error: null,
 			}
 		
+		case actionTypes.SET_LOADING:
+			return { ...state, isLoading:true }
+		
 		case actionTypes.ERROR:
-	
 			return {
 				...state,
-				error:action.payload
+				error: action.payload,
+				isLoading:false
 			}
 	
 		

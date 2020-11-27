@@ -12,12 +12,10 @@ import { BsSearch as SearchIcon } from 'react-icons/bs';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../store/actions/actions'
 
-import Spinner from './Spinner/Spinner'
-
 
 const Searchbar = (props) =>
 {
-
+	//Redux State & Actions
 	const state = useSelector(state => state.data)
 	const dispatch = useDispatch()
 
@@ -25,19 +23,32 @@ const Searchbar = (props) =>
 
 	console.log(state)
 
+	const searchImages = (event) =>
+	{
+		setText(event.target.value)
+		dispatchActionHandler(event.target.value)
+	}
+
+	const dispatchActionHandler = (text) =>
+	{
+		dispatch(actions.getData(text, 10)) //Get only first 10 images
+	}
+
+
+
+
+
 
 	return (
 		<div className = {classes.SearchBar}>
 			
-			<SearchIcon className={classes.Icon} onClick={ () => dispatch(actions.getData("dog", 10))}/>
+			<SearchIcon className={classes.Icon} onClick={() => dispatchActionHandler(text)}/>
 
 			<input
 				placeholder="Search yours.."
 				value={text}
-				onChange={e => setText(e.target.value)}
+				onChange={searchImages}
 			/>	
-
-			<Spinner />
 
 			
 		</div>

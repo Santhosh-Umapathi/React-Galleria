@@ -10,12 +10,17 @@ import logo from '../../assets/images/logo-animated.gif';
 import Searchbar from '../../components/Searchbar';
 import Trending from '../../components/Trending';
 import ImageTile from '../../components/ImageTile';
+import Spinner from '../../components/Spinner/Spinner'
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 const HomeScreen = (props) =>
 {
 
-
+	//Redux State
+	const isLoading = useSelector(state => state.isLoading)
 
 	return (
 		<div className = {classes.RootDiv}>
@@ -24,6 +29,8 @@ const HomeScreen = (props) =>
 			<Searchbar />
 
 			<Trending />
+
+			{isLoading ? <Spinner /> : null}
 
 			<ImageTile />
 

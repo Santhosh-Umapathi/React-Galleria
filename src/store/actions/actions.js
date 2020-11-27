@@ -19,6 +19,14 @@ const setLoading = () =>
 	}
 }
 
+const setTrendingKeyword = (keyword) =>
+{
+	return {
+		type: actionTypes.SET_TRENDING_KEYWORD,
+		payload:keyword
+	}
+}
+
 const error = (value) =>
 {
 	return {
@@ -49,5 +57,6 @@ const getData = (keyword, limit) =>
 export {
 	getData,
 	setLoading,
+	setTrendingKeyword
 
 }

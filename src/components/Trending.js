@@ -1,9 +1,16 @@
 import React from 'react'
 //Css
 import classes from './Components.module.css'
+//Redux
+import { useDispatch, useSelector } from 'react-redux'
+import * as actions from '../store/actions/actions'
+
 
 const Trending = (props) =>
 {
+
+	const state = useSelector(state => state.state)
+	const dispatch = useDispatch()
 
 	const trendingKeywords = [
 		{id: "Athonet", label: "Athonet" },
@@ -26,12 +33,19 @@ const Trending = (props) =>
 	// Get sub-array of first n elements after shuffled
 	let randomKeywords = shuffled.slice(0, 5);
 
+	const setTrendingKeywordHandler = (keyword) =>
+	{
+		dispatch(actions.getData(keyword, 10))
+		dispatch(actions.setTrendingKeyword(keyword))
+	}
+	
+
 	const keywords = randomKeywords.map(keyword =>
 	{
 		return <p
 			id = {keyword.id}
 			className={classes.TrendingKeywords}
-			onClick={() => console.log(keyword.label+"clicked")}
+			onClick={() => setTrendingKeywordHandler(keyword.label)}
 		>
 			{keyword.label}
 		</p>
@@ -41,7 +55,6 @@ const Trending = (props) =>
 		<div className = {classes.Trending}>
 			<p>Trending Now..</p>
 			{keywords}
-		
 		</div>
 	)
 }

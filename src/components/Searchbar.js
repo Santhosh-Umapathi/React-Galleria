@@ -16,12 +16,11 @@ import * as actions from '../store/actions/actions'
 const Searchbar = (props) =>
 {
 	//Redux State & Actions
-	const state = useSelector(state => state.data)
+	const state = useSelector(state => state)
 	const dispatch = useDispatch()
 
 	const [text, setText] = useState("")
 
-	console.log(state)
 
 	const searchImages = (event) =>
 	{
@@ -34,6 +33,20 @@ const Searchbar = (props) =>
 		dispatch(actions.getData(text, 10)) //Get only first 10 images
 	}
 
+	useEffect(() =>
+	{
+		//Set trending keyword on searchbar
+		if (state.trendingKeyword)
+		setText(state.trendingKeyword)
+		
+		//Cleanup trending keyword
+		return () =>
+		{	
+			if(state.trendingKeyword)
+			dispatch(actions.setTrendingKeyword(null))
+		}
+	}, [state.trendingKeyword])
+
 
 
 
@@ -42,14 +55,13 @@ const Searchbar = (props) =>
 	return (
 		<div className = {classes.SearchBar}>
 			
-			<SearchIcon className={classes.Icon} onClick={() => dispatchActionHandler(text)}/>
-
+			<SearchIcon className={classes.Icon} onClick={() => dispatchActionHandler(text)} />
+			
 			<input
 				placeholder="Search yours.."
 				value={text}
 				onChange={searchImages}
 			/>	
-
 			
 		</div>
 	)

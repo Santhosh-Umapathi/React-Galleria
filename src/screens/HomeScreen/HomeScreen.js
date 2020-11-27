@@ -13,14 +13,22 @@ import ImageTile from '../../components/ImageTile';
 import Spinner from '../../components/Spinner/Spinner'
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/actions'
 
 
 
 const HomeScreen = (props) =>
 {
-
 	//Redux State
 	const isLoading = useSelector(state => state.isLoading)
+
+	const state = useSelector(state => state)
+	const dispatch = useDispatch()
+
+	useEffect(() =>
+	{
+		dispatch(actions.getData("cats", 10))
+	}, [])
 
 	return (
 		<div className = {classes.RootDiv}>

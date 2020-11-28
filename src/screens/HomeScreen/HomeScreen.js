@@ -11,6 +11,7 @@ import Searchbar from '../../components/Searchbar';
 import Trending from '../../components/Trending';
 import ImageTile from '../../components/ImageTile/ImageTile';
 import Spinner from '../../components/Spinner/Spinner'
+
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../store/actions/actions'
@@ -34,8 +35,6 @@ const HomeScreen = (props) =>
 	
 	
 
-
-
 	return (
 		<div className = {classes.RootDiv}>
 			<img src={logo} className={classes.AnimatedImage} alt = "animatedImage"/>
@@ -46,7 +45,7 @@ const HomeScreen = (props) =>
 
 			{isLoading ? <Spinner /> : null}
 
-			<ImageTile />
+			<ImageTile data={state.data}/>
 		</div>
 		);
 };

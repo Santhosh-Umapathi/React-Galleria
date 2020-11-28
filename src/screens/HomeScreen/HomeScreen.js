@@ -9,7 +9,7 @@ import logo from '../../assets/images/logo-animated.gif';
 //Components
 import Searchbar from '../../components/Searchbar';
 import Trending from '../../components/Trending';
-import ImageTile from '../../components/ImageTile';
+import ImageTile from '../../components/ImageTile/ImageTile';
 import Spinner from '../../components/Spinner/Spinner'
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,14 +25,20 @@ const HomeScreen = (props) =>
 	const state = useSelector(state => state)
 	const dispatch = useDispatch()
 
+	//Initial images to Load
 	useEffect(() =>
 	{
-		dispatch(actions.getData("cats", 10))
+		dispatch(actions.getData("dog", 30))
 	}, [])
+
+	
+	
+
+
 
 	return (
 		<div className = {classes.RootDiv}>
-			<img src={logo} className={classes.Image} alt = "home"/>
+			<img src={logo} className={classes.AnimatedImage} alt = "animatedImage"/>
 			
 			<Searchbar />
 
@@ -41,7 +47,6 @@ const HomeScreen = (props) =>
 			{isLoading ? <Spinner /> : null}
 
 			<ImageTile />
-
 		</div>
 		);
 };

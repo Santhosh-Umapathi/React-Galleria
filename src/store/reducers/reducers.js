@@ -24,14 +24,14 @@ const reducer = (state = initialState, action) =>
 				return item.data
 			})
 
-			filteredData.map(item =>
+			filteredData.map((item, index) =>
 			{
 				const dataObject = {}
-
+			
 				if (item.preview)
 				{
 
-					const fixedUrl = item.preview.images[0].source.url.replaceAll('amp;s', 's')
+					const fixedUrl = item.preview.images[0].source.url.replaceAll('amp;', '')
 					const fixedResolutionUrl = item.preview.images[0].resolutions.map(item =>
 					{
 						item.url = item.url.replaceAll('amp;', '')
@@ -40,6 +40,7 @@ const reducer = (state = initialState, action) =>
 
 					dataObject.id = item.preview.images[0].id
 					dataObject.title = item.title
+					dataObject.author = item.author
 					dataObject.url = item.url
 					dataObject.ups = item.ups
 					dataObject.downs = item.downs

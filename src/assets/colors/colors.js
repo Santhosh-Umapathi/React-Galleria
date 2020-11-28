@@ -14,7 +14,7 @@ const colors =
 	},
 	secondary:
 	{
-		red: "#d23241",
+		red: "#E44236",
 		darkGreen: "#64a539",
 		green: "#82be20",
 	},

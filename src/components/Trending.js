@@ -35,7 +35,7 @@ const Trending = (props) =>
 
 	const setTrendingKeywordHandler = (keyword) =>
 	{
-		dispatch(actions.getData(keyword, 10))
+		dispatch(actions.getData(keyword, 30))
 		dispatch(actions.setTrendingKeyword(keyword))
 	}
 	

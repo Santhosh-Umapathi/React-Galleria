@@ -5,7 +5,7 @@ const divStyle = {
     height: '250px',
     textAlign: 'center',
     padding: '5px 10px',
-    background: '#eee',
+    background: 'green',
     marginTop: '15px'
 };
 

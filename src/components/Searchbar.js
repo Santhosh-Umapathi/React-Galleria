@@ -30,7 +30,7 @@ const Searchbar = (props) =>
 
 	const dispatchActionHandler = (text) =>
 	{
-		dispatch(actions.getData(text, 10)) //Get only first 10 images
+		dispatch(actions.getData(text, 30)) //Get only first 30 images
 	}
 
 	useEffect(() =>

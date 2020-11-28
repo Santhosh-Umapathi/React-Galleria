@@ -13,16 +13,18 @@
 }
 
 /*Image*/
-.Image
+.AnimatedImage
 {
 	width: auto;
 	height: auto;
 }
 
+
+
 /*Tablets*/
 @media (min-width: 768px) and (max-width: 1024px) 
 {
-	.Image
+	.AnimatedImage
 	{
 		width: 600px;
 		height: 600px;
@@ -32,7 +34,7 @@
 /*Mobiles*/
 @media (min-width: 320px) and (max-width: 480px) 
 {
-	.Image
+	.AnimatedImage
 	{
 		width: 310px;
 		height: 310px;

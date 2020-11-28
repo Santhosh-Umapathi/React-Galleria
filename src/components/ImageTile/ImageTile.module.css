@@ -1,0 +1,96 @@
+/*Image Tile Component*/
+.ImagesContainerRoot
+{
+	display:flex; 
+	width:100%; 
+}
+
+.ImageContainer
+{
+	position:relative;
+	display:inline-grid;
+	margin: 10px;
+	cursor: pointer;
+}
+
+
+
+.ImageTile
+{
+	border-radius: 5px;	
+}
+
+.ImageContainer:hover .Overlay
+{
+	opacity: 1;
+}
+
+
+
+/*Masonry*/
+.MasonryGrid 
+{
+	display: -webkit-box;
+	display: -ms-flexbox; 
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+  
+.MasonryGrid_column 
+{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	padding: 0px; 
+	margin: 0px; 
+	width: auto !important;
+}
+
+
+
+/*Overlay Component*/
+.OverlayContainer
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: red;
+	margin: 5px;
+}
+
+.OverlayContainer p
+{
+	margin-left: 5px; 
+	font-size: 16px;
+}
+
+.OverlaySubContainer
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: orange;
+}
+
+.OverlayDiv
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: palegoldenrod;
+}
+
+.Overlay 
+{
+	transition: .3s ease;
+	height: 15%;
+	width: 100%;
+	opacity: 0;
+	position: absolute;
+	background-color: blue;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}

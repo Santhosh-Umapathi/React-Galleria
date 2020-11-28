@@ -22,6 +22,7 @@ $ yarn start
 * [Prop Types](https://www.npmjs.com/package/prop-types) - Property Types for React
 * [Axios](https://github.com/axios/axios) - Network requests for React
 * [React Icons](https://react-icons.github.io/react-icons/) - Icons for React
+* [React Masonry CSS](https://github.com/paulcollett/react-masonry-css) - Masonry layout for React
 
 ## Project Structure
 📦src

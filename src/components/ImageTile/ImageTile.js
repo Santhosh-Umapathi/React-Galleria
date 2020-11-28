@@ -76,7 +76,7 @@ const ImageTile = (props) =>
 	{
 		images = state.data.map(image =>
 		{
-			return <div className = {classes.ImageContainer}>
+			return <div className = {classes.ImageContainer} key = {image.id}>
 				
 			<img
 				src={image.image.url}
@@ -93,7 +93,7 @@ const ImageTile = (props) =>
 
 			/>
 				
-				<Overlay author={image.author} ups={image.ups} downs={image.downs}/>
+				<Overlay author={image.author} ups={image.ups} downs={image.downs} id={image.id}/>
 				
 
 			</div>

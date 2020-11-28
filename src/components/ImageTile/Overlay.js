@@ -1,20 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 //Css
 import classes from './ImageTile.module.css'
 //Icons
 import icons from '../../assets/icons/icons'
+import { FaRegHeart as AddFavoriteIcon } from 'react-icons/fa';
+import { FaHeart as RemoveFavoriteIcon } from 'react-icons/fa';
 
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/actions'
 
 // Wrapper Container for Overlay Components
-const OverlayContainer = ({icon, text}) =>
+const OverlayContainer = ({icon, text, favorite, id}) =>
 {
+
+	const dispatch = useDispatch()
+
+	const [isSelected, setIsSelected] = useState(false)
+
+	let favoriteIcon = <AddFavoriteIcon
+		className={classes.AddFavoriteIcon}
+		onClick={() =>
+		{
+			setIsSelected(true)
+			dispatch(actions.addFavorite(id))
+		}}
+	/>
+	
+	if (isSelected)
+	{
+		favoriteIcon = <RemoveFavoriteIcon
+			className={classes.RemoveFavoriteIcon}
+			onClick={() => {
+				setIsSelected(false)
+				dispatch(actions.deleteFavorite(id))
+			}}
+		/>
+	}
 
 	return (
 		<div className={classes.OverlayContainer}>
+
+			{favorite ? favoriteIcon : null}
+
 			{icon}
 
 			{text ? <p> {text} </p> : null}
+
 		</div>
 	)
 }
@@ -24,7 +57,7 @@ const OverlayContainer = ({icon, text}) =>
 const Overlay = (props) =>
 {
 
-	const { author, ups, downs } = props
+	const { author, ups, downs, id } = props
 	
 
 	return (
@@ -40,7 +73,7 @@ const Overlay = (props) =>
 
 					<OverlayContainer icon = {icons.downsIcon} text = {String(downs)} />
 
-					<OverlayContainer icon = {icons.addFavoriteIcon} />
+					<OverlayContainer favorite id={id}/>
 
 				</div>
 

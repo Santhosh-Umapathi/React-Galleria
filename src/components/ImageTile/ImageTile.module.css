@@ -134,3 +134,52 @@
 	left: 0;
 	text-align: center;
 }
+
+/*Favorite Icon*/
+.AddFavoriteIcon
+{
+	color: white;
+	font-size: 30px;
+}
+
+.AddFavoriteIcon:hover
+{
+	cursor: pointer;
+	color: #8ee4da;
+}
+
+.AddFavoriteIcon:active
+{
+	animation: clicked 0.2s linear;
+}
+
+.RemoveFavoriteIcon
+{
+	color: red;
+	opacity: 1;
+	font-size: 30px;
+}
+
+.RemoveFavoriteIcon:hover
+{
+	cursor: pointer;
+	color: #E44236;
+	opacity: 0.8;
+}
+
+.RemoveFavoriteIcon:active
+{
+	animation: clicked 0.2s linear;
+}
+
+@keyframes clicked {
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -27,6 +27,22 @@ const setTrendingKeyword = (keyword) =>
 	}
 }
 
+const addFavorite = (id) =>
+{
+	return {
+		type: actionTypes.ADD_FAVORITE,
+		payload:id
+	}
+}
+
+const deleteFavorite = (id) =>
+{
+	return {
+		type: actionTypes.DELETE_FAVORITE,
+		payload:id
+	}
+}
+
 const error = (value) =>
 {
 	return {
@@ -57,6 +73,8 @@ const getData = (keyword, limit) =>
 export {
 	getData,
 	setLoading,
-	setTrendingKeyword
+	setTrendingKeyword,
+	addFavorite,
+	deleteFavorite
 
 }

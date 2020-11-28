@@ -4,7 +4,8 @@ const initialState =
 {
 	data: null,
 	isLoading: false,
-	trendingKeyword:null,
+	trendingKeyword: null,
+	favorites:[],
 	error:null
 }
 
@@ -62,7 +63,32 @@ const reducer = (state = initialState, action) =>
 			return { ...state, isLoading: true }
 		
 		case actionTypes.SET_TRENDING_KEYWORD:
-			return { ...state, trendingKeyword:action.payload }
+			return { ...state, trendingKeyword: action.payload }
+		
+		case actionTypes.ADD_FAVORITE:
+			const addId = action.payload
+
+			const favoritesAddState = [...state.favorites]
+
+			state.data.filter(image =>
+			{
+				if (image.id === addId)
+				{
+					favoritesAddState.push(image)
+				}
+			})
+
+			return { ...state,  favorites: favoritesAddState}
+		
+		case actionTypes.DELETE_FAVORITE:
+			const deleteId = action.payload
+			
+			const favoritesDeleteState = state.favorites.filter(image =>
+			{
+				return image.id !== deleteId
+			})
+
+			return { ...state, favorites: favoritesDeleteState}
 		
 		case actionTypes.ERROR:
 			return {

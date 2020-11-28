@@ -7,6 +7,7 @@ import icons from '../assets/icons/icons'
 
 // React Icons
 import { BsSearch as SearchIcon } from 'react-icons/bs';
+import { AiOutlineClear as ClearIcon } from 'react-icons/ai';
 
 //Redux
 import { useSelector, useDispatch } from 'react-redux';
@@ -62,6 +63,12 @@ const Searchbar = (props) =>
 				value={text}
 				onChange={searchImages}
 			/>	
+
+			{
+				text !== ""
+					? <ClearIcon className={classes.Icon} onClick={() => setText("")}/>
+				: null
+			}
 			
 		</div>
 	)

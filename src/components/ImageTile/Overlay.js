@@ -28,7 +28,7 @@ const Overlay = (props) =>
 	
 
 	return (
-		<div className={classes.Overlay}>
+		<div className={classes.Overlay} {...props}>
 
 			<div className = {classes.OverlayDiv}>
 

@@ -1,21 +1,31 @@
+//Action Constants
 import actionTypes from '../actions/actionTypes'
 
+//State
 const initialState =
 {
+	token:null,
+	loginStatus: null,
 	data: null,
-	isLoading: false,
 	trendingKeyword: null,
-	favorites:[],
-	error:null
+	favorites: [],
+	isLoading: false,
+	error: null,
 }
 
 
 
-
+//Action Reducer
 const reducer = (state = initialState, action) =>
 {
 	switch (action.type)
 	{
+		case actionTypes.LOGIN:
+			console.log(action.payload)
+			return { ...state, token: action.payload.idToken, loginStatus: action.payload, error:null }
+		
+		case actionTypes.LOGOUT:
+			return {...state, token:null, loginStatus:null, error:null}
 
 		case actionTypes.GET_DATA:
 			const data = []

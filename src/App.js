@@ -1,7 +1,6 @@
 import React from 'react'
 //React Router
-import { Redirect, Route, Switch, NavLink } from 'react-router-dom';
-
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 //Layout
 import Layout from './Layout/Layout';
@@ -12,41 +11,39 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
 import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
 
+//Redux
+import { useSelector } from 'react-redux';
+
+
 
 const App = () =>
 {
 
-  let routes = <Switch>
-    <Route path="/login" component={LoginScreen} />
-    <Redirect to='/login'/>
-  </Switch>
+  const isAuthenticated = useSelector(state => state.token)
 
- const isAuthenticated = true
+  //Login Route
+  let routes = (
+    <Switch>
+      <Route path="/login" component={LoginScreen} />
+      <Redirect to='/login'/>
+    </Switch>)
 
-  if(isAuthenticated === true)
+  // Normal Routes
+  if(isAuthenticated)
   {
-    console.log(isAuthenticated)
-    routes = <Switch>
-      <Route path="/favorites" component={FavoritesScreen} />
-      <Route path="/logout" component={LogoutScreen} />
-      <Route path="/" exact component={HomeScreen} />
-      <Redirect to='/' />
-    </Switch>
+    routes = (
+    <Layout>
+      <Switch>
+        <Route path="/favorites" component={FavoritesScreen} />
+        <Route path="/logout" component={LogoutScreen} />
+        <Route path="/" exact component={HomeScreen} />
+        <Redirect to='/' />
+      </Switch>
+    </Layout>)
   }
 
 
-  return (
-
-      isAuthenticated
-        ? <Layout>
-          {routes}
-        </Layout >
-        : routes
-            
-      
-    
-
-  );
+  return routes;
 }
 
 export default App;

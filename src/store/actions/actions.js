@@ -1,7 +1,7 @@
 //Actions Constant
 import actionTypes from './actionTypes'
 //Axios
-import axios from '../../axios/axios'
+import {instance, loginInstance} from '../../axios/axios'
 
 
 const setDataToStore = (value) =>
@@ -51,10 +51,43 @@ const error = (value) =>
 	}
 }
 	
+const setLoginStatus = (payload) =>
+{
+	return {
+		type: actionTypes.LOGIN,
+		payload:payload
+	}
+}
+
+const logout = () =>
+{
+	return {
+		type: actionTypes.LOGOUT,
+	}
+}
 
 
 
 //Middleware
+const login = (email, password) =>
+{
+
+	const postData = {
+		email: email,
+		password: password,
+		returnSecureToken:true
+	}
+
+	return dispatch =>
+	{
+		dispatch(setLoading())
+
+		loginInstance.post("", postData)
+			.then(res => dispatch(setLoginStatus(res.data)))
+			.catch(err => dispatch(error(err.response.data.error.message)))
+	}
+}
+
 const getData = (keyword, limit) =>
 {
 
@@ -64,17 +97,20 @@ const getData = (keyword, limit) =>
 	{
 		dispatch(setLoading())
 
-		axios.get(searchParam)
+		instance.get(searchParam)
 			.then(res => dispatch(setDataToStore(res.data.data.children)))
-			.catch(err => dispatch(error(err)))
+			.catch(err => dispatch(error()))
 	}
 }
 
 export {
+	login,
+	logout,
 	getData,
 	setLoading,
 	setTrendingKeyword,
 	addFavorite,
-	deleteFavorite
+	deleteFavorite,
+	error
 
 }

@@ -19,27 +19,6 @@
 	height: auto;
 }
 
-/*Tablets*/
-@media (min-width: 768px) and (max-width: 1024px) 
-{
-	.Image
-	{
-		width: 600px;
-		height: 600px;
-	}
-}
-
-/*Mobiles*/
-@media (min-width: 320px) and (max-width: 480px) 
-{
-	.Image
-	{
-		width: 310px;
-		height: 310px;
-	}	
-}
-
-
 
 /*Input Container*/
 .InputContainer
@@ -102,11 +81,8 @@
 }
 
 
-
-
-
-
-@keyframes clicked {
+@keyframes clicked 
+{
     0% {
         transform: scale(1);
     }
@@ -116,4 +92,24 @@
     100% {
         transform: scale(1);
     }
+}
+
+/*Tablets*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.Image
+	{
+		width: 600px;
+		height: 600px;
+	}
+}
+
+/*Mobiles*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.Image
+	{
+		width: 310px;
+		height: 310px;
+	}	
 }

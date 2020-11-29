@@ -37,7 +37,6 @@
 	font-size: 30px;
 	margin-right: -50px;
 	margin-left: -60px;
-
 	z-index: 1;
 }
 
@@ -95,12 +94,6 @@
 	color:#4d4d4d;
 	font-size: 18px;
 }
-
-  
-
-
-
-
 
 
 @keyframes clicked {

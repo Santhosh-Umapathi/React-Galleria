@@ -1,33 +1,33 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+
 //Css
 import classes from './ImageTile.module.css'
-
-//Components
-import Spinner from '../Spinner/Spinner'
-import Overlay from './Overlay'
-import ImageModal from './ImageModal'
 
 //Masonry Layout
 import Masonry from 'react-masonry-css'
 
+//Components
+import Overlay from './Overlay'
+import ImageModal from './ImageModal'
+
 
 const ImageTile = (props) =>
 {
-
 	const [showModal, setShowModal] = useState(false)
 	const [imageInfo, setImageInfo] = useState(null)
 	
-
 	let images = null
-
-	
+	const breakpointColumns = {
+		default: 4,
+		1100: 3,
+		700: 2,
+		500: 1
+	};
 
 	if (props.data)
 	{
 		images = props.data.map(image =>
 		{
-
-
 			const imageWidth = image.imageResolutions[2] ? image.imageResolutions[2].width + 100 : "500px"
 			const imageHeight = image.imageResolutions[2] ? image.imageResolutions[2].height + 100 : "500px"
 
@@ -51,17 +51,6 @@ const ImageTile = (props) =>
 			</div>
 		})
 	}
-
-
-
-	const breakpointColumns = {
-		default: 4,
-		1100: 3,
-		700: 2,
-		500: 1
-	};
-
-	
 
 
 	return (

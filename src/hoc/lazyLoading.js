@@ -21,7 +21,6 @@ const LazyLoading = (importComponent) =>
 			
 			return C ? <C {...this.props}/> : null
 		}
-
 	}
 }
 

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/actions'
+
 //CSS
 import classes from './LoginScreen.module.css'
 
 //Logo Animated
 import logo from '../../assets/images/logo-animated.gif';
-
-//Redux
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../store/actions/actions'
 
 //Components
 import ErrorMessage from '../../Error/ErrorMessage';
@@ -35,8 +35,7 @@ const LoginScreen = () =>
 
 	//Send Login request
 	const loginHandler = () =>
-	{
-		//Check basic validity
+	{	//Check basic validity
 		if (email === "" || password === "")
 		dispatch(actions.error("Enter Email & Password"))
 		else
@@ -81,8 +80,5 @@ const LoginScreen = () =>
 		</div>
 	);
 };
-
-
-
 
 export default LoginScreen;

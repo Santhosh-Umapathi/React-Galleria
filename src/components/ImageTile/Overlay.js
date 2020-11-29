@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/actions'
+
 //Css
 import classes from './ImageTile.module.css'
+
 //Icons
 import icons from '../../assets/icons/icons'
 import { FaRegHeart as AddFavoriteIcon } from 'react-icons/fa';
 import { FaHeart as RemoveFavoriteIcon } from 'react-icons/fa';
 
-//Redux
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../store/actions/actions'
 
 // Wrapper Container for Overlay Components
 const OverlayContainer = ({icon, text, favorite, id}) =>
@@ -72,7 +74,6 @@ const OverlayContainer = ({icon, text, favorite, id}) =>
 // Overlay Container for ImageTile
 const Overlay = (props) =>
 {
-
 	const { author, ups, downs, id } = props
 	
 

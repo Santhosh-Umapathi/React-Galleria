@@ -1,19 +1,19 @@
 import React from 'react'
+
 //Logo
 import Logo from '../../assets/images/logo.png'
-
-//SideDrawer Items
-import NavigationItems from '../NavigationItems/NavigationItems'
 
 //Css
 import classes from './Sidedrawer.module.css'
 
-//Backdrop
+//SideDrawer Items
+import NavigationItems from '../NavigationItems/NavigationItems'
+
+//Components
 import Backdrop from '../../components/Backdrop/Backdrop'
  
 const Sidedrawer = (props) =>
 {
-	
 	let attachedClasses = [classes.Sidedrawer, classes.Close]
 
 	if (props.show)

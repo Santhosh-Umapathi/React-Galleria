@@ -1,7 +1,7 @@
 import React from 'react'
+
 //Css
 import classes from './ImageTile.module.css'
-
 
 //Components
 import Overlay from './Overlay'
@@ -13,14 +13,14 @@ const ImageModal = (props) =>
 {
 	const { showModal, clicked, imageInfo } = props
 	
-
 	return (
 		<>
 			<Backdrop show={showModal} clicked={clicked} />
 			
-			<div className={classes.ImageModalContainer} onClick = {() => console.log("clicked")}>
+			<div className={classes.ImageModalContainer}>
 				<div className={classes.ImageModalSubContainer}>
 					<p>{imageInfo.title}</p>
+					
 					<img
 						src={imageInfo.image.url}
 						alt={imageInfo.id}

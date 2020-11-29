@@ -8,22 +8,13 @@ import Toolbar from '../Navigation/Toolbar/Toolbar';
 import classes from './Layout.module.css'
 
 
-
 const Layout = (props) =>
 {
-
 	const [showSideDrawer, setShowSideDrawer] = useState(false)
 	
+	const backdropHandler = () => setShowSideDrawer(false)
 
-	const backdropHandler = () =>
-	{
-		setShowSideDrawer(false)
-	}
-
-	const toggleSidebarHandler = () =>
-	{
-		setShowSideDrawer((prevState) => {return !prevState.showSideDrawer})
-	}
+	const toggleSidebarHandler = () => setShowSideDrawer(prevState => !prevState.showSideDrawer)
 
 	return (
 		<>

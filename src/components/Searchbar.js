@@ -1,25 +1,24 @@
-import React, {useEffect, useState} from 'react'
-//Css
-import classes from './Components.module.css'
-
-
-// React Icons
-import { BsSearch as SearchIcon } from 'react-icons/bs';
-import { AiOutlineClear as ClearIcon } from 'react-icons/ai';
+import React, { useEffect, useState } from 'react'
 
 //Redux
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../store/actions/actions'
 
+//Css
+import classes from './Components.module.css'
 
-const Searchbar = (props) =>
+// React Icons
+import { BsSearch as SearchIcon } from 'react-icons/bs';
+import { AiOutlineClear as ClearIcon } from 'react-icons/ai';
+
+
+const Searchbar = () =>
 {
 	const [text, setText] = useState("")
 
 	//Redux State & Actions
 	const state = useSelector(state => state)
 	const dispatch = useDispatch()
-
 
 
 	const searchImages = (event) =>
@@ -53,10 +52,6 @@ const Searchbar = (props) =>
 			dispatch(actions.setTrendingKeyword(null))
 		}
 	}, [state.trendingKeyword])
-
-
-
-
 
 
 	return (

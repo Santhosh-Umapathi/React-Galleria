@@ -1,14 +1,16 @@
 import React from 'react'
-//Css
-import classes from './Components.module.css'
+
 //Redux
 import { useDispatch } from 'react-redux'
 import * as actions from '../store/actions/actions'
 
+//Css
+import classes from './Components.module.css'
+
 
 const Trending = () =>
 {
-
+	//Redux Actions
 	const dispatch = useDispatch()
 
 	const trendingKeywords = [

@@ -1,4 +1,9 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from '../../store/actions/actions'
+import Greeting from '../../components/Greeting';
 
 //CSS
 import classes from './HomeScreen.module.css'
@@ -12,18 +17,10 @@ import Trending from '../../components/Trending';
 import ImageTile from '../../components/ImageTile/ImageTile';
 import Spinner from '../../components/Spinner/Spinner'
 
-//Redux
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from '../../store/actions/actions'
-import Greeting from '../../components/Greeting';
-
-
 
 const HomeScreen = () =>
 {
-
 	const [limit, setLimit] = useState(10)
-
 
 	//Redux State
 	const state = useSelector(state => state)
@@ -39,6 +36,7 @@ const HomeScreen = () =>
 		dispatch(actions.getData(keywordSearch, limit))
 	}, [limit])
 
+	//Infinite Scrolling
 	useEffect(() =>
 	{
         const options = {
@@ -60,20 +58,14 @@ const HomeScreen = () =>
 		}
 	}, []);
 	
-	
-
 	//Observer the scrolling
 	const handleObserver = (entities) =>
 	{
         const target = entities[0];
 		if (target.isIntersecting)
-		{   
-			setLimit((limit) => limit + 10)
-        }
+		setLimit((limit) => limit + 10)
     }
 
-
-	
 
 	return (
 		<div className={classes.RootDiv}>
@@ -97,10 +89,7 @@ const HomeScreen = () =>
 			</div>
 
 		</div>
-		);
+	);
 };
-
-
-
 
 export default HomeScreen;

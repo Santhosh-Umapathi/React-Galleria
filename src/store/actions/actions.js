@@ -1,9 +1,11 @@
 //Actions Constant
 import actionTypes from './actionTypes'
+
 //Axios
 import {instance, loginInstance, userInstance} from '../../axios/axios'
 
 
+//Set Data Action
 const setDataToStore = (value) =>
 {
 	return {
@@ -12,6 +14,7 @@ const setDataToStore = (value) =>
 	}
 }
 
+//Set Loading Action
 const setLoading = () =>
 {
 	return {
@@ -19,6 +22,7 @@ const setLoading = () =>
 	}
 }
 
+//Set Trending Action
 const setTrendingKeyword = (keyword) =>
 {
 	return {
@@ -27,6 +31,7 @@ const setTrendingKeyword = (keyword) =>
 	}
 }
 
+//Add Favorite Action
 const addFavorite = (id) =>
 {
 	return {
@@ -35,6 +40,7 @@ const addFavorite = (id) =>
 	}
 }
 
+//Delete Favorite Action
 const deleteFavorite = (id) =>
 {
 	return {
@@ -43,6 +49,7 @@ const deleteFavorite = (id) =>
 	}
 }
 
+//Error Action
 const error = (value) =>
 {
 	return {
@@ -51,6 +58,7 @@ const error = (value) =>
 	}
 }
 	
+//Store login data
 const setLoginStatus = (token, email) =>
 {
 	return {
@@ -59,7 +67,7 @@ const setLoginStatus = (token, email) =>
 	}
 }
 
-
+//Logout & Cleanup Localstorage
 const logout = () =>
 {
 	localStorage.removeItem("token")
@@ -72,10 +80,11 @@ const logout = () =>
 
 
 
-//Middleware
+/*-- Middleware --*/
+
+//Send login request to Firebase
 const login = (email, password) =>
 {
-
 	const postData = {
 		email: email,
 		password: password,
@@ -94,7 +103,6 @@ const login = (email, password) =>
 				localStorage.setItem("email", res.data.email);
 			})
 			.catch(err => dispatch(error(err.response.data.error.message)))
-		
 	}
 }
 
@@ -113,9 +121,9 @@ const checkLoginStatus = () =>
 	}
 }
 
+//Get data from Api
 const getData = (keyword, limit) =>
 {
-
 	const searchParam = `${keyword}/top.json?limit=${limit}`
 
 	return dispatch =>
@@ -129,7 +137,6 @@ const getData = (keyword, limit) =>
 }
 
 
-
 export {
 	login,
 	checkLoginStatus,
@@ -140,5 +147,4 @@ export {
 	addFavorite,
 	deleteFavorite,
 	error
-
 }

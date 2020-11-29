@@ -1,13 +1,16 @@
 import React from 'react'
+
 //Logo
 import Logo from '../../assets/images/logo.png'
+
 //CSS
 import classes from './Toolbar.module.css'
+
 //Navbar Items
 import NavigationItems from '../NavigationItems/NavigationItems'
+
 //Side Drawer
 import DrawerToggle from '../Sidedrawer/DrawerToggle/DrawerToggle'
-
 
 
 const Toolbar = (props) =>
@@ -26,8 +29,7 @@ const Toolbar = (props) =>
 				<NavigationItems />
 			</nav>
 		</header>
-		
 	)
 }
 
-export default Toolbar
+export default Toolbar;

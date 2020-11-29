@@ -1,5 +1,4 @@
 /*Error Message Component*/
-
 .ErrorMessage
 {
 	display: flex;
@@ -11,5 +10,4 @@
 .ErrorMessage p
 {
 	color: red;
-
 }

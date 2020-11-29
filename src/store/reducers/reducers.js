@@ -14,7 +14,6 @@ const initialState =
 }
 
 
-
 //Action Reducer
 const reducer = (state = initialState, action) =>
 {
@@ -82,7 +81,6 @@ const reducer = (state = initialState, action) =>
 		
 		case actionTypes.ADD_FAVORITE:
 			const addId = action.payload
-
 			const favoritesAddState = [...state.favorites]
 
 			state.data.filter(image =>
@@ -115,8 +113,6 @@ const reducer = (state = initialState, action) =>
 		default:
 			return state;
 	}
-
-	
 }
 
 export default reducer;

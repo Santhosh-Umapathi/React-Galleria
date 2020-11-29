@@ -1,14 +1,15 @@
 import React from 'react'
 
-//Css
-import classes from './Components.module.css'
-
 //Redux
 import { useSelector } from 'react-redux'
 
+//Css
+import classes from './Components.module.css'
+
+
 const Greeting = () =>
 {
-
+	//Redux State
 	const userEmail = useSelector(state => state.userEmail)
 
 	let name = "Nicola"

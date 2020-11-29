@@ -1,6 +1,11 @@
 import React, { useEffect } from 'react'
+
 //React Router
 import { Redirect, Route, Switch } from 'react-router-dom';
+
+//Redux
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from './store/actions/actions'
 
 //Layout
 import Layout from './Layout/Layout';
@@ -10,10 +15,6 @@ import LoginScreen from './screens/LoginScreen/LoginScreen'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
 import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
-
-//Redux
-import { useDispatch, useSelector } from 'react-redux';
-import * as actions from './store/actions/actions'
 
 
 const App = () =>
@@ -50,7 +51,6 @@ const App = () =>
       </Switch>
     </Layout>)
   }
-
 
   return routes;
 }

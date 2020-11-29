@@ -25,8 +25,6 @@ const ImageModal = (props) =>
 						src={imageInfo.image.url}
 						alt={imageInfo.id}
 						key={imageInfo.id}
-						width="500px"
-						height= "500px"
 						className = {classes.ImageTile}
 					/>
 

@@ -1,7 +1,7 @@
 //Actions Constant
 import actionTypes from './actionTypes'
 //Axios
-import {instance, loginInstance} from '../../axios/axios'
+import {instance, loginInstance, userInstance} from '../../axios/axios'
 
 
 const setDataToStore = (value) =>
@@ -51,16 +51,20 @@ const error = (value) =>
 	}
 }
 	
-const setLoginStatus = (payload) =>
+const setLoginStatus = (token, email) =>
 {
 	return {
 		type: actionTypes.LOGIN,
-		payload:payload
+		payload: { token:token, email:email}
 	}
 }
 
+
 const logout = () =>
 {
+	localStorage.removeItem("token")
+	localStorage.removeItem("email")
+
 	return {
 		type: actionTypes.LOGOUT,
 	}
@@ -83,8 +87,29 @@ const login = (email, password) =>
 		dispatch(setLoading())
 
 		loginInstance.post("", postData)
-			.then(res => dispatch(setLoginStatus(res.data)))
+			.then(res =>
+			{
+				dispatch(setLoginStatus(res.data.idToken, res.data.email))
+				localStorage.setItem("token", res.data.idToken);
+				localStorage.setItem("email", res.data.email);
+			})
 			.catch(err => dispatch(error(err.response.data.error.message)))
+		
+	}
+}
+
+//Check if already logged in 
+const checkLoginStatus = () =>
+{
+	return dispatch =>
+	{
+		const token = localStorage.getItem("token")
+		const email = localStorage.getItem("email")
+
+		if (!token)
+		dispatch(logout())
+		else
+		dispatch(setLoginStatus(token, email))	
 	}
 }
 
@@ -99,12 +124,15 @@ const getData = (keyword, limit) =>
 
 		instance.get(searchParam)
 			.then(res => dispatch(setDataToStore(res.data.data.children)))
-			.catch(err => dispatch(error()))
+			.catch(err => dispatch(error(err)))
 	}
 }
 
+
+
 export {
 	login,
+	checkLoginStatus,
 	logout,
 	getData,
 	setLoading,

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 //React Router
 import { Redirect, Route, Switch } from 'react-router-dom';
 
@@ -12,14 +12,23 @@ import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
 import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
 
 //Redux
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import * as actions from './store/actions/actions'
 
 
 const App = () =>
 {
-
+  
+  
+  //Redux State & Actions
   const isAuthenticated = useSelector(state => state.token)
+  const dispatch = useDispatch()
+
+  //Check if already logged in
+  useEffect(() =>
+  {
+    dispatch(actions.checkLoginStatus())
+  }, [])
 
   //Login Route
   let routes = (

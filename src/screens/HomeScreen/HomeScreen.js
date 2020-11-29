@@ -15,6 +15,7 @@ import Spinner from '../../components/Spinner/Spinner'
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../store/actions/actions'
+import Greeting from '../../components/Greeting';
 
 
 
@@ -75,8 +76,11 @@ const HomeScreen = () =>
 	
 
 	return (
-		<div className = {classes.RootDiv}>
-			<img src={logo} className={classes.AnimatedImage} alt = "animatedImage"/>
+		<div className={classes.RootDiv}>
+			
+			<img src={logo} className={classes.AnimatedImage} alt="animatedImage" />
+			
+			<Greeting />
 			
 			<Searchbar />
 

@@ -82,7 +82,19 @@
 	animation: clicked 0.2s linear;
 }
 
+/*Greeting Component*/
+.Greeting
+{
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+}
 
+.Greeting p
+{
+	color:#4d4d4d;
+	font-size: 18px;
+}
 
   
 

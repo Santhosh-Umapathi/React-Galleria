@@ -5,7 +5,7 @@ import actionTypes from '../actions/actionTypes'
 const initialState =
 {
 	token:null,
-	loginStatus: null,
+	userEmail: null,
 	data: null,
 	trendingKeyword: null,
 	favorites: [],
@@ -21,11 +21,15 @@ const reducer = (state = initialState, action) =>
 	switch (action.type)
 	{
 		case actionTypes.LOGIN:
-			console.log(action.payload)
-			return { ...state, token: action.payload.idToken, loginStatus: action.payload, error:null }
+			return {
+				...state,
+				token: action.payload.token,
+				userEmail: action.payload.email,
+				error: null
+			}
 		
 		case actionTypes.LOGOUT:
-			return {...state, token:null, loginStatus:null, error:null}
+			return { ...state, token: null, loginStatus: null, error: null }
 
 		case actionTypes.GET_DATA:
 			const data = []

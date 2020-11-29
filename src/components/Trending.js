@@ -2,14 +2,13 @@ import React from 'react'
 //Css
 import classes from './Components.module.css'
 //Redux
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import * as actions from '../store/actions/actions'
 
 
-const Trending = (props) =>
+const Trending = () =>
 {
 
-	const state = useSelector(state => state.state)
 	const dispatch = useDispatch()
 
 	const trendingKeywords = [
@@ -35,7 +34,7 @@ const Trending = (props) =>
 
 	const setTrendingKeywordHandler = (keyword) =>
 	{
-		dispatch(actions.getData(keyword, 30))
+		dispatch(actions.getData(keyword, 10))
 		dispatch(actions.setTrendingKeyword(keyword))
 	}
 	

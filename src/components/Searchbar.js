@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react'
 //Css
 import classes from './Components.module.css'
 
-//Icons
-import icons from '../assets/icons/icons'
 
 // React Icons
 import { BsSearch as SearchIcon } from 'react-icons/bs';
@@ -16,11 +14,12 @@ import * as actions from '../store/actions/actions'
 
 const Searchbar = (props) =>
 {
+	const [text, setText] = useState("")
+
 	//Redux State & Actions
 	const state = useSelector(state => state)
 	const dispatch = useDispatch()
 
-	const [text, setText] = useState("")
 
 
 	const searchImages = (event) =>
@@ -29,9 +28,16 @@ const Searchbar = (props) =>
 		dispatchActionHandler(event.target.value)
 	}
 
+	const clearImages = () =>
+	{
+		setText("")
+		dispatch(actions.setTrendingKeyword(null))
+	}
+
 	const dispatchActionHandler = (text) =>
 	{
-		dispatch(actions.getData(text, 30)) //Get only first 30 images
+		dispatch(actions.getData(text, 10)) //Get only first 10 images
+		dispatch(actions.setTrendingKeyword(text))
 	}
 
 	useEffect(() =>
@@ -66,7 +72,7 @@ const Searchbar = (props) =>
 
 			{
 				text !== ""
-					? <ClearIcon className={classes.Icon} onClick={() => setText("")}/>
+				? <ClearIcon className={classes.Icon} onClick={clearImages}/>
 				: null
 			}
 			

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 //CSS
 import classes from './HomeScreen.module.css'
@@ -18,21 +18,60 @@ import * as actions from '../../store/actions/actions'
 
 
 
-const HomeScreen = (props) =>
+const HomeScreen = () =>
 {
-	//Redux State
-	const isLoading = useSelector(state => state.isLoading)
 
+	const [limit, setLimit] = useState(10)
+
+
+	//Redux State
 	const state = useSelector(state => state)
 	const dispatch = useDispatch()
+
+	//Ref
+	const loader = useRef(null);
 
 	//Initial images to Load
 	useEffect(() =>
 	{
-		dispatch(actions.getData("dog", 30))
-	}, [])
+		const keywordSearch = state.trendingKeyword ? state.trendingKeyword : "cat"
+		dispatch(actions.getData(keywordSearch, limit))
+	}, [limit])
 
+	useEffect(() =>
+	{
+        const options = {
+            root: null,
+            rootMargin: "20px",
+            threshold: 1.0
+        };
+        // initialize IntersectionObserver & attaching to Load More images
+        const observer = new IntersectionObserver(handleObserver, options);
+		if (loader.current)
+		{
+            observer.observe(loader.current)
+		}
+		//cleanup observer
+		return () =>
+		{
+			observer.disconnect()
+			loader.current = null
+		}
+	}, []);
 	
+	
+
+	//Observer the scrolling
+	const handleObserver = (entities) =>
+	{
+        const target = entities[0];
+		if (target.isIntersecting)
+		{   
+			setLimit((limit) => limit + 10)
+        }
+    }
+
+
 	
 
 	return (
@@ -43,9 +82,16 @@ const HomeScreen = (props) =>
 
 			<Trending />
 
-			{isLoading ? <Spinner /> : null}
+			<ImageTile data={state.data} />
+			
+			<div ref={loader}>
+			{
+				state.isLoading
+				? <Spinner />
+				: <p className = {classes.End}>End of Results</p>
+			}
+			</div>
 
-			<ImageTile data={state.data}/>
 		</div>
 		);
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 //Css
 import classes from './ImageTile.module.css'
@@ -14,11 +14,27 @@ import * as actions from '../../store/actions/actions'
 // Wrapper Container for Overlay Components
 const OverlayContainer = ({icon, text, favorite, id}) =>
 {
-
-	const dispatch = useDispatch()
-
+	//Favorites Icon
 	const [isSelected, setIsSelected] = useState(false)
 
+	//Redux State & Actions
+	const favorites = useSelector(state => state.favorites)
+	const dispatch = useDispatch()
+
+
+	//Persist Favorites Icon on Json data
+	useEffect(() =>
+	{
+		favorites.map(image =>
+		{
+			if (image.id === id)
+			{
+				setIsSelected(true)
+			}
+		})
+	}, [favorites])
+
+	//Setting Favorites Icon
 	let favoriteIcon = <AddFavoriteIcon
 		className={classes.AddFavoriteIcon}
 		onClick={() =>

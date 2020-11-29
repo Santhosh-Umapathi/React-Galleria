@@ -16,8 +16,9 @@ const ImageTile = (props) =>
 
 	const [showModal, setShowModal] = useState(false)
 	const [imageInfo, setImageInfo] = useState(null)
+	
 
-	let images = <Spinner />
+	let images = null
 
 	
 
@@ -25,13 +26,18 @@ const ImageTile = (props) =>
 	{
 		images = props.data.map(image =>
 		{
+
+
+			const imageWidth = image.imageResolutions[2] ? image.imageResolutions[2].width + 100 : "500px"
+			const imageHeight = image.imageResolutions[2] ? image.imageResolutions[2].height + 100 : "500px"
+
 			return <div className = {classes.ImageContainer} key = {image.id}>
 			<img
 				src={image.image.url}
 				alt={image.id}
 				key={image.id}
-				width={image.imageResolutions[2].width + 100}
-				height={image.imageResolutions[2].height + 100}
+				width={imageWidth}
+				height={imageHeight}
 				className={classes.ImageTile}
 				onClick={() =>
 				{
@@ -55,7 +61,7 @@ const ImageTile = (props) =>
 		500: 1
 	};
 
-
+	
 
 
 	return (

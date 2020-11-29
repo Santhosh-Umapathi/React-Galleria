@@ -20,18 +20,19 @@ const reducer = (state = initialState, action) =>
 		case actionTypes.GET_DATA:
 			const data = []
 
+			//Filtering Json
 			const filteredData = action.payload.map(item =>
 			{
 				return item.data
 			})
 
-			filteredData.map((item, index) =>
+
+			filteredData.map(item =>
 			{
 				const dataObject = {}
 			
 				if (item.preview)
 				{
-
 					const fixedUrl = item.preview.images[0].source.url.replaceAll('amp;', '')
 					const fixedResolutionUrl = item.preview.images[0].resolutions.map(item =>
 					{
@@ -96,8 +97,6 @@ const reducer = (state = initialState, action) =>
 				error: action.payload,
 				isLoading:false
 			}
-	
-		
 		
 		default:
 			return state;

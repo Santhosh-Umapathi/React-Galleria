@@ -60,15 +60,13 @@
 	
 	width: 600px;
 	height: 600px;
-	
-		position: fixed;
-		z-index: 500;
-		/* width: 40%; */
-		left: 50%;
-		top: 50%;
-		margin-top: -300px;
-		margin-left: -300px;	
-
+	position: fixed;
+	z-index: 500;
+	/* width: 40%; */
+	left: 50%;
+	top: 50%;
+	margin-top: -300px;
+	margin-left: -300px;	
 }
 
 .ImageModalSubContainer

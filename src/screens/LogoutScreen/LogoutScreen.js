@@ -22,10 +22,13 @@ const LogoutScreen = () =>
 	const [postList, setPostList] = useState({
         list: [1,2,3,4]
     }); 
+    
     // tracking on which page we currently are
     const [page, setPage] = useState(1);
     // add loader refrence 
     const loader = useRef(null);
+
+
 
 	useEffect(() =>
 	{
@@ -45,7 +48,8 @@ const LogoutScreen = () =>
 
 
 	useEffect(() =>
-	{
+    {
+        console.log("ue updated=>", page)
         // here we simulate adding new posts to List
         const newList = postList.list.concat([1,1,1,1]);
         setPostList({

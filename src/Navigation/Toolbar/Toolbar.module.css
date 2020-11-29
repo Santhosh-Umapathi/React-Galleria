@@ -1,4 +1,6 @@
-/*Desktop*/
+/*----- Toolbar -----*/
+
+/*--Desktop--*/
 .Toolbar
 {
 	display: flex;
@@ -38,8 +40,7 @@
 }
 
 
-
-/*Tablets*/
+/*--Tablets--*/
 @media (min-width: 768px) and (max-width: 1024px) 
 {
 	.DesktopOnly
@@ -49,12 +50,12 @@
 
 	.LogoContainer
 	{
-		width: 100%;
-		justify-content: center;
+		width: 65%;
+		justify-content: flex-start;
 	}
 }
 
-/*Mobile*/
+/*--Mobile--*/
 @media (min-width: 320px) and (max-width: 480px) 
 {
 	.DesktopOnly
@@ -64,7 +65,7 @@
 
 	.LogoContainer
 	{
-		width: 100%;
-		justify-content: center;
+		width: 80%;
+		justify-content: flex-start;
 	}
 }

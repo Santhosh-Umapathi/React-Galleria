@@ -1,3 +1,5 @@
+/*-- Desktop --*/
+
 /*Image Tile Component*/
 .ImagesContainerRoot
 {
@@ -154,6 +156,29 @@
 {
 	animation: clicked 0.2s linear;
 }
+
+/*--Tablets--*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	
+
+	/* .ImageTile
+	{
+		height: 200px;
+		width: 200px;
+	} */
+
+
+
+
+}
+
+/*--Mobiles--*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+     
+}
+
 
 @keyframes clicked {
     0% {

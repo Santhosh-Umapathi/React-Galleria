@@ -1,4 +1,6 @@
-/*Desktop*/
+/*-----Side Drawer -----*/
+
+/*--Desktop--*/
 @media (min-width: 1025px) 
 {
 	.Sidedrawer
@@ -30,8 +32,7 @@
 }
 
 
-
-/*Tablets*/
+/*--Tablets--*/
 @media (min-width: 768px) and (max-width: 1024px) 
 {
 	.Sidedrawer
@@ -52,7 +53,7 @@
 	}
 }
 
-/*Mobile*/
+/*--Mobile--*/
 @media (min-width: 320px) and (max-width: 480px) 
 {
 	.Sidedrawer

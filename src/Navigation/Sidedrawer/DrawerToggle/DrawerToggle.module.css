@@ -1,11 +1,12 @@
-/*Desktop*/
+/*-----Drawer Toggle -----*/
+
+/*--Desktop--*/
 .DrawerToggle 
 {
     display: none;
 }
 
-
-/*Tablets*/
+/*--Tablets--*/
 @media (min-width: 768px) and (max-width: 1024px) 
 {
     .DrawerToggle 
@@ -30,12 +31,12 @@
     }
 }
 
-/*Mobiles*/
+/*--Mobiles--*/
 @media (min-width: 320px) and (max-width: 480px) 
 {
     .DrawerToggle 
     {
-        width: 40px;
+        width: 50px;
         height: 100%;
         display: flex;
         flex-flow: column;

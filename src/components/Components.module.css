@@ -3,7 +3,9 @@
 {
 	display: flex;
 	align-items: center;
-	width: 40%;
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 .SearchBar input
@@ -35,8 +37,10 @@
 	cursor: pointer;
 	color:#4d4d4d;
 	font-size: 30px;
-	margin-right: -50px;
-	margin-left: -60px;
+	position: absolute;
+	left: 21%;
+	/* margin-right: -50px;
+	margin-left: -60px; */
 	z-index: 1;
 }
 
@@ -50,6 +54,28 @@
 	animation: clicked 0.2s linear;
 }
 
+/*Search Bar - Clear Button*/
+.ClearIcon
+{
+	cursor: pointer;
+	color:#4d4d4d;
+	font-size: 30px;
+	position: absolute;
+	right: 21%;
+	/* margin-right: -50px;
+	margin-left: -60px; */
+	z-index: 1;
+}
+
+.ClearIcon:hover
+{
+	color:#8ee4da;
+}
+
+.ClearIcon:active
+{
+	animation: clicked 0.2s linear;
+}
 
 /*Trending Component*/
 .Trending
@@ -57,10 +83,11 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	width: 40%;
+	width: 80%;
 	color:#666666;
 	font-size: 16px;
 	font-style: normal;
+	margin-left: 20%;
 }
 
 .TrendingKeywords
@@ -84,15 +111,103 @@
 /*Greeting Component*/
 .Greeting
 {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 40%;
+	width: 100%;
 }
 
 .Greeting p
 {
 	color:#4d4d4d;
 	font-size: 18px;
+}
+
+/*--Tablets--*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.SearchBar
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+	}
+
+	.Icon
+	{
+		position: absolute;
+		left: 12%;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	.ClearIcon
+	{
+		position: absolute;
+		right: 12%;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	.Trending
+	{
+		width: 100%;
+	}
+
+
+    .Greeting
+    {
+		width: 100%;
+		text-align: center;
+    }
+}
+
+/*--Mobiles--*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.SearchBar
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+	}
+
+	.Icon
+	{
+		position: absolute;
+		left: 12%;
+		font-size: 20px;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	.ClearIcon
+	{
+		position: absolute;
+		right: 12%;
+		font-size: 20px;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	.Trending
+	{
+		width: 100%;
+		font-size: 12px;
+	}
+
+    .Greeting
+    {
+        width: 100%;
+		text-align: center;
+	}  
+
+	.Greeting p
+	{
+		font-size: 15px;
+	}
 }
 
 

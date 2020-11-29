@@ -67,7 +67,7 @@ const Searchbar = () =>
 
 			{
 				text !== ""
-				? <ClearIcon className={classes.Icon} onClick={clearImages}/>
+				? <ClearIcon className={classes.ClearIcon} onClick={clearImages}/>
 				: null
 			}
 			

@@ -1,4 +1,6 @@
-/*Login Screen*/
+/*-----Login Screen-----*/
+
+/*--Desktop--*/
 .RootDiv
 {
 	display: flex;
@@ -18,7 +20,6 @@
 	width: auto;
 	height: auto;
 }
-
 
 /*Input Container*/
 .InputContainer
@@ -67,7 +68,6 @@
 	transition: box-shadow 0.3s ease-in-out;
 }
 
-
 .InputContainer button:hover
 {
 	cursor: pointer;
@@ -81,6 +81,26 @@
 }
 
 
+/*--Tablets--*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+	.Image
+	{
+		width: 600px;
+		height: 600px;
+	}
+}
+
+/*--Mobiles--*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+	.Image
+	{
+		width: 310px;
+		height: 310px;
+	}	
+}
+
 @keyframes clicked 
 {
     0% {
@@ -92,24 +112,4 @@
     100% {
         transform: scale(1);
     }
-}
-
-/*Tablets*/
-@media (min-width: 768px) and (max-width: 1024px) 
-{
-	.Image
-	{
-		width: 600px;
-		height: 600px;
-	}
-}
-
-/*Mobiles*/
-@media (min-width: 320px) and (max-width: 480px) 
-{
-	.Image
-	{
-		width: 310px;
-		height: 310px;
-	}	
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 //Css
 import classes from './ImageTile.module.css'
@@ -21,15 +21,19 @@ const ImageTile = (props) =>
 		default: 4,
 		1100: 3,
 		700: 2,
-		500: 1
+		500: 2
 	};
+
+	//Ref for Desktop/Tablet/Mobile
+	const ref = useRef(null)
+	const refAdd = useRef(0)
 
 	if (props.data)
 	{
 		images = props.data.map(image =>
 		{
-			const imageWidth = image.imageResolutions[2] ? image.imageResolutions[2].width + 100 : "500px"
-			const imageHeight = image.imageResolutions[2] ? image.imageResolutions[2].height + 100 : "500px"
+			const imageWidth = image.imageResolutions[ref.current] ? image.imageResolutions[ref.current].width + refAdd.current  : "500px"
+			const imageHeight = image.imageResolutions[ref.current] ? image.imageResolutions[ref.current].height + refAdd.current  : "500px"
 
 			return <div className = {classes.ImageContainer} key = {image.id}>
 			<img
@@ -51,6 +55,33 @@ const ImageTile = (props) =>
 			</div>
 		})
 	}
+
+	
+
+	//Setting Image Resolution based on device size
+	useEffect(() =>
+	{
+		if (window.innerWidth <= 500)
+		{
+			//Mobile
+			ref.current = 0
+			refAdd.current = 50
+		}
+		if ( window.innerWidth > 500 && window.innerWidth <= 850)
+		{
+			//Tablet
+			ref.current = 1
+			refAdd.current = 0
+
+		}
+		if (window.innerWidth > 851)
+		{
+			//Desktop
+			ref.current = 2
+			refAdd.current = 50
+
+		}
+	}, [])
 
 
 	return (

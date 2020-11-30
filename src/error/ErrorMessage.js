@@ -1,16 +1,24 @@
 import React from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Css
 import classes from './Error.module.css'
 
-const ErrorMessage = (props) =>
+const ErrorMessage = ({message}) =>
 {
 
 	return (
 		<div className = {classes.ErrorMessage}>
-			<p>{props.message}</p>
+			<p>{message}</p>
 		</div>
 	)
 }
+
+ErrorMessage.propTypes =
+{
+	message: PropTypes.string,
+};
 
 export default ErrorMessage

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Redux
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from '../../store/actions/actions'
@@ -8,7 +11,6 @@ import * as actions from '../../store/actions/actions'
 import classes from './ImageTile.module.css'
 
 //Icons
-import icons from '../../assets/icons/icons'
 import { FaRegHeart as AddFavoriteIcon } from 'react-icons/fa';
 import { FaHeart as RemoveFavoriteIcon } from 'react-icons/fa';
 import { AiOutlineLike as UpsIcon } from 'react-icons/ai';
@@ -74,6 +76,14 @@ const OverlayContainer = ({icon, text, favorite, id}) =>
 	)
 }
 
+OverlayContainer.propTypes =
+{
+	icon: PropTypes.any,
+	text: PropTypes.string,
+	favorite: PropTypes.bool,
+	id: PropTypes.string,
+};
+
 
 // Overlay Container for ImageTile
 const Overlay = (props) =>
@@ -102,5 +112,13 @@ const Overlay = (props) =>
 		</div>
 	)
 }
+
+Overlay.propTypes =
+{
+	author: PropTypes.string,
+	ups: PropTypes.string,
+	downs: PropTypes.string,
+	id: PropTypes.string,
+};
 
 export default Overlay;

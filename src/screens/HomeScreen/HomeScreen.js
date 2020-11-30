@@ -78,7 +78,7 @@ const HomeScreen = () =>
 
 			<Trending />
 
-			<ImageTile data={state.data} />
+			 <ImageTile data={state.data} />
 			
 			<div ref={loader}>
 			{

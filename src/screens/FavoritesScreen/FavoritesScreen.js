@@ -23,8 +23,8 @@ const FavoritesScreen = () =>
 	}
 
 	const greeting = state.favorites.length === 0
-		? <p>Favorites have heart too ! Make them happy. Go and hit that heart button </p>
-		: <p>Hey <i>{name}</i>!! Here's your list of favorites</p>
+		? <p className = {classes.FavoritesText}>Favorites have heart too ! Make them happy. Go and hit that heart button </p>
+		: <p className = {classes.FavoritesText}>Hey <i>{name}</i>!! Here's your list of favorites</p>
 
 	return (
 		<div className = {classes.Favorites}>

@@ -1,5 +1,8 @@
 import React from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types'
+
 //Logo
 import Logo from '../../assets/images/logo.png'
 
@@ -31,5 +34,10 @@ const Toolbar = (props) =>
 		</header>
 	)
 }
+
+Toolbar.propTypes =
+{
+	clicked:PropTypes.func
+};
 
 export default Toolbar;

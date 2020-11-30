@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Css
 import classes from './ImageTile.module.css'
 
@@ -32,30 +35,26 @@ const ImageTile = (props) =>
 	useEffect(() =>
 	{
 		if (window.innerWidth <= 500)
-		{
-			//Mobile
+		{	//Mobile
 			setRef(0)
 			setRefAdd(50)
 		}
 		if ( window.innerWidth > 500 && window.innerWidth <= 850)
-		{
-			//Tablet
+		{	//Tablet
 			setRef(1)
 			setRefAdd(0)
 		}
 		if (window.innerWidth > 851)
-		{
-			//Desktop
+		{	//Desktop
 			setRef(2)
 			setRefAdd(50)
 		}
-
+		//Cleanup
 		return () =>
 		{
 			setRef(null)
 			setRefAdd(0)
 		}
-
 	}, [ref, refAdd])
 
 
@@ -81,15 +80,15 @@ const ImageTile = (props) =>
 					setImageInfo(image)
 				}}
 			/>
-				
-				<Overlay author={image.author} ups={image.ups} downs={image.downs} id={image.id}/>
-				
+				{
+					window.innerWidth > "320px"
+					? <Overlay author={image.author} ups={image.ups} downs={image.downs} id={image.id} />
+					: null
+				}
+	
 			</div>
 		})
 	}
-
-
-
 
 	return (
 		<div className = {classes.ImagesContainerRoot}>
@@ -110,9 +109,16 @@ const ImageTile = (props) =>
 				  />
 				: null
 			}
-			
 		</div>
 	)
 }
+
+ImageTile.propTypes =
+{
+	data: PropTypes.array,
+	ups: PropTypes.string,
+	downs: PropTypes.string,
+	id: PropTypes.string,
+};
 
 export default ImageTile;

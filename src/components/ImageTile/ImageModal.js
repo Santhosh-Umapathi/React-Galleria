@@ -1,5 +1,8 @@
 import React from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Css
 import classes from './ImageTile.module.css'
 
@@ -41,5 +44,12 @@ const ImageModal = (props) =>
 		</>
 	)
 }
+
+ImageModal.propTypes =
+{
+	showModal: PropTypes.bool,
+	clicked: PropTypes.func,
+	imageInfo: PropTypes.object,
+};
 	
 export default ImageModal;

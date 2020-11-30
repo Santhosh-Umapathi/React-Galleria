@@ -159,7 +159,9 @@
 
 	.Trending
 	{
-		width: 100%;
+		/* width: 100%; */
+		margin-left: 0%;
+
 	}
 
 
@@ -201,8 +203,8 @@
 
 	.Trending
 	{
-		width: 100%;
 		font-size: 12px;
+		margin-left: 0%;
 	}
 
     .Greeting

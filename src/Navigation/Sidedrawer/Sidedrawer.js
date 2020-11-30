@@ -1,5 +1,8 @@
 import React from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Logo
 import Logo from '../../assets/images/logo.png'
 
@@ -37,5 +40,12 @@ const Sidedrawer = (props) =>
 		</>
 	)
 }
+
+
+Sidedrawer.propTypes =
+{
+	show: PropTypes.bool,
+	backdropHandler:PropTypes.func
+};
 
 export default Sidedrawer

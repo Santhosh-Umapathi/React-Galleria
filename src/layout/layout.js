@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 //Navigation
 import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
@@ -28,5 +31,10 @@ const Layout = (props) =>
 		</>
 	)
 }
+
+Layout.propTypes =
+{
+	children: PropTypes.any,
+};
 
 export default Layout;

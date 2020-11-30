@@ -11,6 +11,10 @@ import classes from './ImageTile.module.css'
 import icons from '../../assets/icons/icons'
 import { FaRegHeart as AddFavoriteIcon } from 'react-icons/fa';
 import { FaHeart as RemoveFavoriteIcon } from 'react-icons/fa';
+import { AiOutlineLike as UpsIcon } from 'react-icons/ai';
+import { AiOutlineDislike as DownsIcon } from 'react-icons/ai';
+import { FaUserSecret as AuthorIcon } from 'react-icons/fa';
+
 
 
 // Wrapper Container for Overlay Components
@@ -82,13 +86,13 @@ const Overlay = (props) =>
 
 			<div className = {classes.OverlayDiv}>
 
-				<OverlayContainer icon = {icons.authorIcon} text = {author} />
+				<OverlayContainer icon={<AuthorIcon className={classes.OtherIcons}/>} text = {author} />
 
 				<div className = {classes.OverlaySubContainer}>
 					
-					<OverlayContainer icon = {icons.upsIcon} text = {ups} />
+					<OverlayContainer icon = {<UpsIcon className={classes.OtherIcons}/>} text = {ups} />
 
-					<OverlayContainer icon = {icons.downsIcon} text = {String(downs)} />
+					<OverlayContainer icon = {<DownsIcon className={classes.OtherIcons}/>} text = {String(downs)} />
 
 					<OverlayContainer favorite id={id}/>
 

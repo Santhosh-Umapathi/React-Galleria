@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
 //Css
 import classes from './ImageTile.module.css'
@@ -15,6 +15,9 @@ const ImageTile = (props) =>
 {
 	const [showModal, setShowModal] = useState(false)
 	const [imageInfo, setImageInfo] = useState(null)
+	//Setting Resolution based on Device
+	const [ref, setRef] = useState(null)
+	const [refAdd, setRefAdd] = useState(0)
 	
 	let images = null
 	const breakpointColumns = {
@@ -24,16 +27,45 @@ const ImageTile = (props) =>
 		500: 2
 	};
 
-	//Ref for Desktop/Tablet/Mobile
-	const ref = useRef(null)
-	const refAdd = useRef(0)
 
-	if (props.data)
+	//Setting Image Resolution based on device size
+	useEffect(() =>
+	{
+		if (window.innerWidth <= 500)
+		{
+			//Mobile
+			setRef(0)
+			setRefAdd(50)
+		}
+		if ( window.innerWidth > 500 && window.innerWidth <= 850)
+		{
+			//Tablet
+			setRef(1)
+			setRefAdd(0)
+		}
+		if (window.innerWidth > 851)
+		{
+			//Desktop
+			setRef(2)
+			setRefAdd(50)
+		}
+
+		return () =>
+		{
+			setRef(null)
+			setRefAdd(0)
+		}
+
+	}, [ref, refAdd])
+
+
+	//Setting Images
+	if (props.data && ref !== null)
 	{
 		images = props.data.map(image =>
 		{
-			const imageWidth = image.imageResolutions[ref.current] ? image.imageResolutions[ref.current].width + refAdd.current  : "500px"
-			const imageHeight = image.imageResolutions[ref.current] ? image.imageResolutions[ref.current].height + refAdd.current  : "500px"
+			const imageWidth = image.imageResolutions[ref] ? image.imageResolutions[ref].width + refAdd  : "500px"
+			const imageHeight = image.imageResolutions[ref] ? image.imageResolutions[ref].height + refAdd  : "500px"
 
 			return <div className = {classes.ImageContainer} key = {image.id}>
 			<img
@@ -56,32 +88,7 @@ const ImageTile = (props) =>
 		})
 	}
 
-	
 
-	//Setting Image Resolution based on device size
-	useEffect(() =>
-	{
-		if (window.innerWidth <= 500)
-		{
-			//Mobile
-			ref.current = 0
-			refAdd.current = 50
-		}
-		if ( window.innerWidth > 500 && window.innerWidth <= 850)
-		{
-			//Tablet
-			ref.current = 1
-			refAdd.current = 0
-
-		}
-		if (window.innerWidth > 851)
-		{
-			//Desktop
-			ref.current = 2
-			refAdd.current = 50
-
-		}
-	}, [])
 
 
 	return (

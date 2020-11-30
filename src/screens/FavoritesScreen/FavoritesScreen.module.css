@@ -1,3 +1,6 @@
+/*----- Favorites Screen -----*/
+
+/*--Desktop--*/
 .Favorites
 {
 	padding-top: 10px;	
@@ -9,4 +12,29 @@
 	width: 100%;
 	color: #666666;
 	text-align: center;
+}
+
+.Favorites i
+{
+	color: #8ee4da;
+} 
+
+/*--Tablets--*/
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+    .Favorites p
+	{
+		font-size: 15px;
+	}
+}
+
+/*--Mobiles--*/
+@media (min-width: 320px) and (max-width: 480px) 
+{
+    .Favorites p
+	{
+		font-size: 15px;
+		margin: 10px;
+		width: 90%;
+	} 
 }

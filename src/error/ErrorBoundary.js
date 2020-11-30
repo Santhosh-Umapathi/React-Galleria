@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 
+//Prop Types
+import PropTypes from 'prop-types';
+
 // Gif
-// import SomethingWentWrong from "../assets/images/SomethingWentWrong.gif"
+import SomethingWentWrong from "../assets/images/error-animated.gif"
+
+//Css
+import classes from './Error.module.css';
 
 
 class ErrorBoundary extends Component 
@@ -28,13 +34,14 @@ class ErrorBoundary extends Component
       if (this.state.error)
       {
         return  (
-        <div>
-          {/* <img src = {SomethingWentWrong} alt='Error Occured...' style={styles.image}/> */}
+          <div className = {classes.ErrorBoundary}>
+          <img src = {SomethingWentWrong} alt='Error Occured...' />
           
-          <div>
+          <div className = {classes.MessageContainer}>
             <h2> {this.state.errorMessage} </h2>
 
-            <p>Please try refreshing the Page again</p>
+              <p>Please try refreshing the Page again</p>
+              <button onClick = {() => window.location.reload()}>Refresh</button>
           </div>
 
         </div>
@@ -44,5 +51,10 @@ class ErrorBoundary extends Component
 	  return this.props.children
   }
 }
+
+ErrorBoundary.propTypes =
+{
+	children: PropTypes.any,
+
 
 export default ErrorBoundary;

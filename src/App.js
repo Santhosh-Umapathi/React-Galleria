@@ -15,12 +15,11 @@ import LoginScreen from './screens/LoginScreen/LoginScreen'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
 import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
+import ErrorBoundary from './Error/ErrorBoundary';
 
 
 const App = () =>
 {
-  
-  
   //Redux State & Actions
   const isAuthenticated = useSelector(state => state.token)
   const dispatch = useDispatch()
@@ -52,7 +51,8 @@ const App = () =>
     </Layout>)
   }
 
-  return routes;
+  return <ErrorBoundary>{routes}</ErrorBoundary>
+    
 }
 
-export default App;
+    export default App;

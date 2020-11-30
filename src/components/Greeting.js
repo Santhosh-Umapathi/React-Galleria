@@ -18,13 +18,20 @@ const Greeting = () =>
 	{
 		name = "Serena"
 	}
-	
-
-	return (
+	/* Simulated Error Boundary */
+	// const randNum = Math.random()
+	// if (randNum > 0.7)
+	// {
+	// 	throw new Error("Something went wrong")
+	// }
+	// else
+	// {
+		return (
 		<div className = {classes.Greeting}>
 			<p>Hey <i>{name}</i>! What would you like to search today?</p>
 		</div>
-	)
+		)
+	// }
 }
 
 export default Greeting;

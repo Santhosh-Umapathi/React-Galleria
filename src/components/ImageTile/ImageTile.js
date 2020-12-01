@@ -68,6 +68,7 @@ const ImageTile = (props) =>
 
 			return <div className = {classes.ImageContainer} key = {image.id}>
 			<img
+				
 				src={image.image.url}
 				alt={image.id}
 				key={image.id}
@@ -80,8 +81,8 @@ const ImageTile = (props) =>
 					setImageInfo(image)
 				}}
 			/>
-				{
-					window.innerWidth > "320px"
+				{	//Overlay only for Tablet/Desktop
+					ref !== 0
 					? <Overlay author={image.author} ups={image.ups} downs={image.downs} id={image.id} />
 					: null
 				}
@@ -91,7 +92,7 @@ const ImageTile = (props) =>
 	}
 
 	return (
-		<div className = {classes.ImagesContainerRoot}>
+		<div className = {classes.ImagesContainerRoot} data-testid = "ImageTile">
 			<Masonry
 				breakpointCols={breakpointColumns}
 				className={classes.MasonryGrid}
@@ -116,9 +117,6 @@ const ImageTile = (props) =>
 ImageTile.propTypes =
 {
 	data: PropTypes.array,
-	ups: PropTypes.string,
-	downs: PropTypes.string,
-	id: PropTypes.string,
 };
 
 export default ImageTile;

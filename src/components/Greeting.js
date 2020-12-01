@@ -28,7 +28,7 @@ const Greeting = () =>
 	// {
 		return (
 		<div className = {classes.Greeting}>
-			<p>Hey <i>{name}</i>! What would you like to search today?</p>
+			<p>Hey <i data-testid ="Greeting">{name}</i>! What would you like to search today?</p>
 		</div>
 		)
 	// }

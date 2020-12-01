@@ -11,7 +11,7 @@ import classes from './LoginScreen.module.css'
 import logo from '../../assets/images/logo-animated.gif';
 
 //Components
-import ErrorMessage from '../../Error/ErrorMessage';
+import ErrorMessage from '../../error/ErrorMessage';
 import Spinner from '../../components/Spinner/Spinner';
 
 

@@ -45,6 +45,7 @@ const Trending = () =>
 	{
 		return <p
 			id = {keyword.id}
+			key = {keyword.id}
 			className={classes.TrendingKeywords}
 			onClick={() => setTrendingKeywordHandler(keyword.label)}
 		>
@@ -53,7 +54,7 @@ const Trending = () =>
 	})
 
 	return (
-		<div className = {classes.Trending}>
+		<div className = {classes.Trending} data-testid = "Trending">
 			<p>Trending Now..</p>
 			{keywords}
 		</div>

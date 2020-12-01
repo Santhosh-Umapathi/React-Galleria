@@ -8,14 +8,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as actions from './store/actions/actions'
 
 //Layout
-import Layout from './Layout/Layout';
+import Layout from './layout/layout';
 
 //Screens
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import FavoritesScreen from './screens/FavoritesScreen/FavoritesScreen'
 import LogoutScreen from './screens/LogoutScreen/LogoutScreen'
-import ErrorBoundary from './Error/ErrorBoundary';
+//Error Boundary
+import ErrorBoundary from './error/ErrorBoundary';
 
 
 const App = () =>
@@ -55,4 +56,4 @@ const App = () =>
     
 }
 
-    export default App;
+export default App;

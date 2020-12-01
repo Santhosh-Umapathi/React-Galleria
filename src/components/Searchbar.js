@@ -40,17 +40,9 @@ const Searchbar = () =>
 	}
 
 	useEffect(() =>
-	{
-		//Set trending keyword on searchbar
+	{	//Set trending keyword on searchbar
 		if (state.trendingKeyword)
 		setText(state.trendingKeyword)
-		
-		//Cleanup trending keyword
-		return () =>
-		{	
-			if(state.trendingKeyword)
-			dispatch(actions.setTrendingKeyword(null))
-		}
 	}, [state.trendingKeyword])
 
 

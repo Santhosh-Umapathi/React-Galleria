@@ -22,7 +22,7 @@ import thunk from 'redux-thunk'; //Middleware
 const composeEnhancers = process.env.NODE_ENV === "development" ? (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) : null || compose;
 
 //Store
-const store = createStore(reducers, (applyMiddleware(thunk)))
+const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)))
 
 
 const app = (

@@ -107,7 +107,8 @@ const reducer = (state = initialState, action) =>
 			return {
 				...state,
 				error: action.payload,
-				isLoading:false
+				isLoading: false,
+				data:null
 			}
 		
 		default:

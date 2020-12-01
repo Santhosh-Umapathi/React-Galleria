@@ -23,6 +23,9 @@ User can save their favorite images and it is nicely stored on their favorite sc
 ##### Side drawer / Toolbar for Response layout
 Toolbar and Side drawer are added based on the layout, if its a smaller device, they can use side drawer for navigating between screens.
 
+##### Error Boundary
+Global Error boundary with nice animation.
+
 ##### Routing with React Router
 Navigation is added with the help of React Router, Guarded routes based on user authentication status and redirected to Login screen is not authenticated.
 

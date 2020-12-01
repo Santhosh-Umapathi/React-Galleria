@@ -11,7 +11,6 @@ import Overlay from './Overlay'
 import Backdrop from '../Backdrop/Backdrop'
 
 
-
 const ImageModal = (props) =>
 {
 	const { showModal, clicked, imageInfo } = props

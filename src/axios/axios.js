@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_KEY = "AIzaSyDYsQLxZmB3HOG8NOgywff7XNcVd5Vq0lk"
+const API_KEY = process.env.REACT_APP_FIREBASE_API_KEY
 
 //Reddit Api
 const instance = axios.create({
